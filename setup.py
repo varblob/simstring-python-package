@@ -7,6 +7,8 @@ setup.py file for SWIG example
 import sys
 import os.path
 
+v = sys.version_info
+
 def get_rootdir():
     return os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 def get_includedir():
@@ -21,7 +23,7 @@ os.environ['CPP'] = 'g++'; os.environ['LDSHARED'] = 'g++'
 from distutils.core import setup, Extension
 
 if sys.platform.startswith("darwin"):
-    libs = ['-liconv', '-lpython']
+    libs = ['-liconv', '-lpython%d.%d.%d' % (v[0], v[1],v[2])]
 else:
     libs = []
 
