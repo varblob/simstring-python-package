@@ -7,6 +7,8 @@ setup.py file for SWIG example
 import sys
 import os.path
 
+import pdb; pdb.set_trace()
+
 def get_rootdir():
     return os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 def get_includedir():
